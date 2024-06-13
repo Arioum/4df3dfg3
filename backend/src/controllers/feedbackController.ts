@@ -1,0 +1,19 @@
+import { Request, Response } from 'express';
+import { addFeedback, getAllFeedback } from '../services/feedbackService';
+
+export const getFeedback = (req: Request, res: Response) => {
+  res.json(getAllFeedback());
+};
+
+export const submitFeedback = (req: Request, res: Response) => {
+  const { name, feedback } = req.body;
+
+  if (!name || !feedback) {
+    return res.status(400).json({ error: 'Name and feedback are required' });
+  }
+
+  const createdAt = new Date().toLocaleString();
+
+  addFeedback({ name, feedback, createdAt });
+  res.status(201).json({ message: 'Feedback submitted successfully' });
+};
