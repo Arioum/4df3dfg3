@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import FeedbackForm from './compoents/FeedbackForm';
-import FeedbackList from './compoents/FeedbackList';
-import Tabs from './compoents/Tabs';
+import FeedbackForm from './components/FeedbackForm';
+import FeedbackList from './components/FeedbackList';
+import Tabs from './components/Tabs';
 
 const App: React.FC = () => {
   return (
